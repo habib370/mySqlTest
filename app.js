@@ -4,6 +4,7 @@ import sequelize from "./config/db.js";
 import userRouter from './router/userRouter.js'
 const app = express();
 app.use(express.json());
+app.get("/", (req, res) => res.send("API Working"));
 app.use('/student',userRouter);
 
 sequelize.sync().then(() => {
